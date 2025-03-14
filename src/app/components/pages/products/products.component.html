@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="main animate__animated wow animate__backInLeft">
+    <h1 class=" text-center fw-bold pb-5">{{text}}</h1>
+    <div class="products d-grid row-gap-4">
+      <div class="row">
+        <div class="col-3 mb-4 justify-content-center" *ngFor="let product of products">
+          <div class="card m-auto">
+            <img src="{{product.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">{{ product.title }}</h5>
+              <p class="card-text">{{ product.description | textShrink }} </p>
+              <a [routerLink]="['/product', product.id]" class="btn btn-primary hvr-sweep-to-top">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader-container" *ngIf="loader">
+  <div class="loader">
+
+  </div>
+</div>

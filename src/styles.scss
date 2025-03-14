@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+.slick-prev, .slick-next {
+  z-index: 9;
+  background-color: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: 1px solid blue;
+
+}
+
+.slick-prev {
+  left: 35px;
+  background-color: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: 2px solid #076BFF;
+}
+
+.slick-next {
+  right: 35px;
+}
+
+//
+//.slick-next:before {
+//  content: url("../images/next 4.png");
+//
+//}
+//
+//.slick-prev:before {
+//  content: url("../images/Group.png");
+//}
+
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.slick-slide img {
+  max-width: 100%;
+}

@@ -1,0 +1,21 @@
+.search-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.cleat-btn {
+  position: absolute;
+  border: 0;
+  right: 3px;
+  top: 6px;
+  color: #0d6efd;
+  background-color: transparent;
+}
+
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="search"]::-ms-clear {
+  display: none;
+}

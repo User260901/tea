@@ -1,0 +1,149 @@
+<div class="container">
+  <div class="order pb-5 w-50 m-auto" *ngIf="showForm">
+    <h2 class="text-center mb-5 fw-bold" id="order-title">Сделать заказ</h2>
+    <form id="form" [formGroup]="orderForm" (ngSubmit)="submitForm()">
+
+      <div class="form-row row mb-3 fw-bold">
+
+        <div class="form-row row mb-3 fw-bold">
+          <div class="form-group col-md-4">
+            <label for="firstName" class="mb-2">Имя</label>
+            <input type="name" class="form-control"
+                   id="firstName" name="username"
+                   placeholder="Имя"
+                   formControlName="name"
+                   name
+            >
+
+            <div *ngIf="orderForm.get('name')?.invalid && (orderForm.get('name')?.touched || orderForm.get('name')?.dirty)" class="text-danger">
+              <div *ngIf="orderForm.get('name')?.errors?.['pattern']">
+                В поле Имя  можно вводить только буквы
+              </div>
+              <div *ngIf="orderForm.get('name')?.errors?.['required']">
+                Пожалуйста, заполните поле
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="form-group col-md-4">
+            <label for="lastName" class="mb-2">Фамилия</label>
+            <input type="text" class="form-control"
+                   id="lastName"
+                   name="lastname"
+                   placeholder="Фамилия"
+                   formControlName="lastName"
+            >
+            <div *ngIf="orderForm.get('lastName')?.invalid && (orderForm.get('lastName')?.touched || orderForm.get('lastName')?.dirty)" class="text-danger">
+              <div *ngIf="orderForm.get('lastName')?.errors?.['pattern']">
+                В поле Фамилия  можно вводить только буквы
+              </div>
+              <div *ngIf="orderForm.get('lastName')?.errors?.['required']">
+                Пожалуйста, заполните поле
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-4">
+            <label for="phone" class="mb-2">Телефон</label>
+            <input type="text"
+                   class="form-control"
+                   id="phone" name="phone"
+                   placeholder="Телефон"
+                   formControlName="phone"
+            >
+
+            <div *ngIf="orderForm.get('phone')?.invalid && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty)" class="text-danger">
+              <div *ngIf="orderForm.get('phone')?.errors?.['pattern']">
+                Не валидни номер телефона
+              </div>
+              <div *ngIf="orderForm.get('phone')?.errors?.['required']">
+                Пожалуйста, заполните поле
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="form-row row mb-3 fw-bold">
+          <div class="form-group col-md-6">
+            <label for="country" class="mb-2">Страна</label>
+            <select type="text" class="form-select" id="country" name="country"
+                    formControlName="country"
+            >
+              <option value="" disabled selected>Choose an option</option>
+              <option value="USA">USA</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Canada">Canada</option>
+            </select>
+
+            <div *ngIf="orderForm.get('country')?.invalid && (orderForm.get('country')?.touched || orderForm.get('country')?.dirty)" class="text-danger">
+              <div *ngIf="orderForm.get('country')?.errors?.['required']">
+                Пожалуйста, выберите страну
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="form-group col-md-6">
+            <label for="postalCode" class="mb-2">Индекс</label>
+            <input type="text" class="form-control"
+                   id="postalCode"
+                   name="index" placeholder="Индекс"
+                   formControlName="index"
+            >
+            <div *ngIf="orderForm.get('index')?.invalid && (orderForm.get('index')?.touched || orderForm.get('index')?.dirty)" class="text-danger">
+              <div *ngIf="orderForm.get('index')?.errors?.['required']">
+                Пожалуйста, заполните поле
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group mb-3 fw-bold">
+          <label for="address" class="mb-2">Адрес</label>
+          <input type="text" class="form-control"
+                 id="address" name="email"
+                 placeholder="Адрес"
+                 formControlName="address"
+          >
+          <div *ngIf="orderForm.get('address')?.invalid && (orderForm.get('address')?.touched || orderForm.get('address')?.dirty)" class="text-danger">
+            <div *ngIf="orderForm.get('address')?.errors?.['pattern']">
+              В поле «Адрес» можно вводить: буквы, цифры, пробелы, дефис и слеш
+            </div>
+            <div *ngIf="orderForm.get('address')?.errors?.['required']">
+              Пожалуйста, заполните поле
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mb-3 fw-bold">
+          <label for="product" class="mb-2">Товар</label>
+          <input type="text" class="form-control"
+                 id="product" name="email"
+                 placeholder="Товар"
+                 [formControlName]="'product'"
+          >
+        </div>
+
+        <div class="form-group mb-3 fw-bold">
+          <label for="commentary" class="mb-2">Комментарий к заказу</label>
+          <textarea type="text" class="form-control" id="commentary" name="email" placeholder="Коментарии"></textarea>
+        </div>
+
+
+        <div *ngIf="requestError" class="text-danger m-2">Произошла ошибка. Попробуйте еще раз</div>
+        <button type="submit" class="btn btn-primary btn-submit hvr-buzz-out" [disabled]="orderForm.invalid">Отправить</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="!showForm" class="mt-5">
+    <h2 class="text-center pt-5">Спасибо за заказ!</h2>
+  </div>
+
+</div>

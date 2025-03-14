@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="product mt-5 mb-5 d-flex justify-content-center">
+    <div class="product-img">
+      <img src="{{product.image}}" alt="tea">
+    </div>
+    <div class="product-content">
+      <h2>{{ product.title }}</h2>
+      <div class="product-description mt-2 ">
+        {{product.description}}
+      </div>
+      <div class="product-price text-end mt-4 fs-4">{{product.price | currency: 'CAD' : 'symbol-narrow' : '1.0-0' }}</div>
+      <div class="product-action text-end mt-4">
+        <button class="btn btn-primary w-25" (click)="orderPage()">Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
