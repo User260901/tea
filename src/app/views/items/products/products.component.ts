@@ -13,7 +13,7 @@ import {Subscription} from 'rxjs';
 export class ProductsComponent implements OnInit, OnDestroy {
   products: ProductsType[] = []
   text: string = 'Наши чайные коллекции'
-  loader: boolean = false;
+  loader: boolean = true;
   private subscription: Subscription[] = [];
 
   constructor(private productsService: ProductsService, ) {

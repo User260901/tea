@@ -10,7 +10,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     OrderRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class OrderModule { }
