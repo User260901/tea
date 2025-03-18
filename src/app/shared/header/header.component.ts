@@ -1,19 +1,13 @@
 import { Component } from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
-import {FormsModule} from '@angular/forms';
-import {CommonService} from '../../services/common.service';
-import {ProductsService} from '../../services/products.service';
+import {Router} from '@angular/router';
+import {ProductsService} from '../../core/services/products.service';
 
 
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterLink,
-    FormsModule
-  ],
-  standalone: true,
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  standalone: false
 })
 export class HeaderComponent {
   searchInput: string = ''

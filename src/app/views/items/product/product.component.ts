@@ -1,19 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductsService} from '../../../services/products.service';
-import {ActivatedRoute, Router, Routes} from '@angular/router';
+import {ProductsService} from '../../../core/services/products.service';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ProductsType} from '../../../../types/products.type';
-import {CurrencyPipe} from '@angular/common';
-import {CommonService} from '../../../services/common.service';
-import {GrantAccessService} from '../../../services/grant-access.service';
+import {CommonService} from '../../../core/services/common.service';
+import {GrantAccessService} from '../../../core/services/grant-access.service';
 
 @Component({
   selector: 'app-product',
-  imports: [
-    CurrencyPipe
-  ],
-  standalone: true,
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
+  styleUrl: './product.component.scss',
+  standalone: false,
 })
 export class ProductComponent implements OnInit {
   product: ProductsType = {} as ProductsType;

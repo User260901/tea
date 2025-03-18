@@ -1,22 +1,14 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProductsService} from '../../../services/products.service';
+import {ProductsService} from '../../../core/services/products.service';
 import {ProductsType} from '../../../../types/products.type';
-import {NgForOf, NgIf} from '@angular/common';
-import {TextShrinkPipe} from '../../../pipes/text-shrink.pipe';
-import {RouterLink} from '@angular/router';
 import {Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-products',
-  imports: [
-    NgForOf,
-    TextShrinkPipe,
-    RouterLink,
-    NgIf,
-  ],
-  standalone: true,
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  styleUrl: './products.component.scss',
+  standalone: false
 })
 export class ProductsComponent implements OnInit, OnDestroy {
   products: ProductsType[] = []
@@ -25,9 +17,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private subscription: Subscription[] = [];
 
   constructor(private productsService: ProductsService, ) {
-
   }
-
 
   ngOnInit() {
     const searchSub = this.productsService.orderSubject.subscribe(value => {

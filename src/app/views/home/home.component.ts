@@ -1,18 +1,13 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NgIf} from '@angular/common';
 import {Observable, Subscription} from 'rxjs';
-import {RouterLink} from '@angular/router';
+
 
 declare var $: any;
 @Component({
   selector: 'app-home',
-  imports: [
-    NgIf,
-    RouterLink
-  ],
-  standalone: true,
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  standalone: false
 })
 export class HomeComponent implements OnInit, OnDestroy{
   public showPopup: boolean = false

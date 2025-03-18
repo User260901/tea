@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'textShrink',
-  standalone: true,
+  standalone: false,
 })
 export class TextShrinkPipe implements PipeTransform {
 

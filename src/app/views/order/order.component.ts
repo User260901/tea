@@ -1,19 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonService} from '../../../services/common.service';
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {NgIf} from '@angular/common';
-import {ProductsService} from '../../../services/products.service';
+import {CommonService} from '../../core/services/common.service';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {ProductsService} from '../../core/services/products.service';
 
 
 @Component({
   selector: 'app-order',
-  imports: [
-    ReactiveFormsModule,
-    NgIf
-  ],
-  standalone: true,
   templateUrl: './order.component.html',
-  styleUrl: './order.component.scss'
+  styleUrl: './order.component.scss',
+  standalone: false
 })
 export class OrderComponent implements OnInit{
   showForm: boolean = true;

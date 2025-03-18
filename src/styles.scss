@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+/* Importing Bootstrap SCSS file. */
+@use 'bootstrap/scss/bootstrap';
 
 
 .slick-prev, .slick-next {
@@ -48,3 +49,4 @@
 .slick-slide img {
   max-width: 100%;
 }
+

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ProductsType} from '../../types/products.type';
-import {OrderFormType} from '../../types/order-form.type';
+import {ProductsType} from '../../../types/products.type';
+import {OrderFormType} from '../../../types/order-form.type';
 import {CommonService} from './common.service';
 import {Subject} from 'rxjs';
 
