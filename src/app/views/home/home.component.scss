@@ -1,0 +1,33 @@
+.popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 20px 20px 20px;
+  position: fixed;
+}
+
+.popup-action {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.cancel {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}

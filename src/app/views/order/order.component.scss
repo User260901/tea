@@ -1,0 +1,10 @@
+//input.ng-touched,
+//input.ng-invalid {
+//  border-color: red;
+//}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
